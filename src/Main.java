@@ -10,16 +10,10 @@ public class Main {
         while(kontynuuj) {
             System.out.println("Ile kostek chcesz rzucić? (3 - 10)");
             System.out.print(">>> ");
-            ;
-            int Suma = 0;
             int LiczbaKostek = scanner.nextInt();
             if (LiczbaKostek >= 3 && LiczbaKostek <= 10) {
-                for (int i = 0; i < LiczbaKostek; i++) {
-                    int Wynik = random.nextInt(1, 7);
-                    Suma += Wynik;
-                    System.out.println("Kostka " + (i + 1) + ": " + Wynik);
-                }
-                System.out.println("Liczba uzyskanych punktów: " + Suma);
+                Rzut rzut = new Rzut(LiczbaKostek);
+                rzut.WypiszWyniki();
                 System.out.println("Jeszcze raz? (t/n)");
                 String decision = scanner.next();
                 if(Objects.equals(decision, "n")){
@@ -27,6 +21,5 @@ public class Main {
                 }
             }
         }
-
     }
 }
